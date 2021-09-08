@@ -1,0 +1,1 @@
+default_app_config = 'palladris_brokers.apps.user.apps.UserConfig'

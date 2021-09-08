@@ -3,10 +3,13 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 
-class User(AbstractUser): 
+class User(AbstractUser):
+    is_provider_admin = models.BooleanField(default=False)
+
+    # setting required fields for createsuperuser command.
+    REQUIRED_FIELDS = ["password", "first_name", "last_name", "email"]
+
     class Meta:
-        verbose_name = "User"
-        verbose_name_plural = "Users"
         ordering = ["first_name", "last_name"]
 
     def __str__(self):

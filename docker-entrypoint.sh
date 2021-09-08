@@ -1,17 +1,12 @@
 #!/bin/bash
-
-# Collect static files
-echo "Collect static files"
-python manage.py collectstatic --noinput
-
 # Apply database migrations
 echo "Apply database migrations"
 python manage.py makemigrations
 python manage.py migrate
 
-#Testing
-echo "Testing"
-python manage.py test
+# Create base instances
+echo "Creating base instances"
+python manage.py create_base_instances
 
 # Start server
 echo "Starting server"

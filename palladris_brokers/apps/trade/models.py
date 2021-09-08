@@ -11,10 +11,6 @@ class Provider(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
 
-    class Meta:
-        verbose_name = "Provider"
-        verbose_name_plural = "Providers"
-
     def __str__(self):
         return f"{self.name} - {self.acronym}"
 
@@ -25,30 +21,28 @@ class Currency(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
 
-    class Meta:
-        verbose_name = "Currency"
-        verbose_name_plural = "Currencies"
-
     def __str__(self):
         return f"{self.name} - {self.acronym}"
 
 
 class Pair(models.Model):
-    from_currency = models.OneToOneField(Currency, on_delete=models.CASCADE, related_name="pair_from_currency")
-    to_currency = models.OneToOneField(Currency, on_delete=models.CASCADE, related_name="pair_to_currency")
+    from_currency = models.ForeignKey(
+        Currency, on_delete=models.CASCADE, related_name="pair_from_currency"
+    )
+    to_currency = models.ForeignKey(
+        Currency, on_delete=models.CASCADE, related_name="pair_to_currency"
+    )
 
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        verbose_name = "Pair"
-        verbose_name_plural = "Pairs"
         unique_together = ("from_currency", "to_currency")
 
     def __str__(self):
         return f"{self.from_currency.acronym}/{self.to_currency.acronym}"
 
     @property
-    def get_joined_acronyms(self):
+    def joined_acronyms(self):
         """Returns the union from the currencies iniciales."""
         return f"{self.from_currency.acronym}/{self.to_currency.acronym}"
 
@@ -59,12 +53,10 @@ class Trade(models.Model):
     pair = models.ForeignKey(Pair, on_delete=models.CASCADE)
     date = models.DateTimeField(auto_now_add=True)
     quantity = models.IntegerField()
-    price = models.DecimalField(max_digits=9, decimal_places=2)
+    price = models.DecimalField(max_digits=9, decimal_places=4)
 
     class Meta:
-        verbose_name = "Trade"
-        verbose_name_plural = "Trades"
         ordering = ["-date"]
 
     def __str__(self):
-        return f""
+        return f"{self.pair} - {self.quantity} - {self.price} - {self.date.strftime('%d/%m/%Y %H:%M:%S')}"

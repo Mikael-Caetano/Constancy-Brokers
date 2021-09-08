@@ -5,14 +5,14 @@ services:
     image: postgres
     hostname: postgres
     container_name: postgres
-    environment:
-      POSTGRES_DB: palladris_brokers_database
-      POSTGRES_USER: palladris_brokers
-      POSTGRES_PASSWORD: password
+    env_file:
+      - ./.env
   django:
     build: .
     image: django
     container_name: django
+    env_file:
+      - ./.env
     entrypoint: ./docker-entrypoint.sh
     volumes:
       - .:/app
@@ -20,5 +20,20 @@ services:
       - "8000:8000"
     depends_on:
       - db
+  redis:
+    image: redis
+  celery:
+    restart: always
+    build:
+      context: .
+    command: celery -A palladris_brokers worker -l info -B
+    volumes:
+      - .:/app
+    env_file:
+      - ./.env
+    depends_on:
+      - db
+      - redis
+      - django
 volumes:
    postgres:
