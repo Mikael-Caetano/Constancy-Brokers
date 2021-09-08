@@ -26,7 +26,7 @@ services:
     restart: always
     build:
       context: .
-    command: celery -A palladris_brokers worker -l info -B
+    command: celery -A constancy_brokers worker -l info -B
     volumes:
       - .:/app
     env_file:

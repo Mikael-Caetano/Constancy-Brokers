@@ -6,12 +6,12 @@ import names
 import random
 import string
 
-from palladris_brokers.apps.trade.models import (
+from constancy_brokers.apps.trade.models import (
     Provider,
     Currency,
     Pair,
 )
-from palladris_brokers.apps.user.models import User
+from constancy_brokers.apps.user.models import User
 
 
 class Command(BaseCommand):

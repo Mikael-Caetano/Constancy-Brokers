@@ -4,7 +4,7 @@ FROM python:3.8
 RUN mkdir /app
 WORKDIR /app
 COPY requirements.txt /app/
-COPY ./palladris_brokers/ /app/
+COPY ./constancy_brokers/ /app/
 COPY manage.py /app/
 
 # set default environment variables
@@ -12,7 +12,7 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV DEBUG 1
 ENV PYTHONUNBUFFERED 1
 ENV LANG C.UTF-8
-ENV DATABASE_URL "palladris_brokers://palladris_brokers:password@postgres:5432/palladris_brokers_database"
+ENV DATABASE_URL "constancy_brokers://constancy_brokers:password@postgres:5432/constancy_brokers_database"
 ENV SECRET_KEY "vagg3miefyg8t52m6i-rhrn%rrc_0s(ql&eq8!)j3qxv#f1+3$"
 
 # Install system dependencies

@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
-from palladris_brokers.apps.user.models import User
+from constancy_brokers.apps.user.models import User
 
 
 class Provider(models.Model):

@@ -4,7 +4,7 @@ from django.conf import settings
 from celery import task
 
 from .models import Provider, Pair, Trade
-from palladris_brokers.apps.user.models import User
+from constancy_brokers.apps.user.models import User
 
 
 @task()
@@ -32,9 +32,7 @@ def generate_trades():
 
         if last_trade:
             random_price_change = decimal.Decimal(random.uniform(-10, +10))
-            price = last_trade.price + random_price_change
-            if price < 0:
-                price = 0
+            price = max(last_trade.price + random_price_change, 0)
         else:
             price = random.uniform(0.1, 1000)
 

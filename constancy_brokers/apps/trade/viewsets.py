@@ -1,6 +1,7 @@
 import datetime
 from django.db.models import (
     Q,
+    Count,
     Value,
     Sum,
     FloatField,
@@ -431,7 +432,13 @@ class MarketGraphView(APIView):
                 trunc_minute=Cast(TruncMinute("date"), DateTimeField()),
             )
             .values("trunc_minute")
-            .annotate(overall=Coalesce(Cast(Sum("price"), FloatField()), 0))
+            .annotate(
+                overall=Coalesce(
+                    Cast(Sum("price"), FloatField())
+                    / Cast(Count("provider", distinct=True), FloatField()),
+                    0,
+                )
+            )
             .values("trunc_minute", "overall")
             .order_by("trunc_minute")
         )

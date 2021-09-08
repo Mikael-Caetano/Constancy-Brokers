@@ -1,4 +1,4 @@
-"""palladris_brokers URL Configuration
+"""constancy_brokers URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/
@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/user/', include('palladris_brokers.apps.user.urls')),
-    path('api/trade/', include('palladris_brokers.apps.trade.urls'))
+    path("admin/", admin.site.urls),
+    path("api/user/", include("constancy_brokers.apps.user.urls")),
+    path("api/trade/", include("constancy_brokers.apps.trade.urls")),
 ]

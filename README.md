@@ -1,4 +1,4 @@
-# Palladris Brokers
+# Constancy Brokers
 A simple trading api.
 
 ## How to install and run:  
@@ -8,17 +8,17 @@ Pre-requisites:
 1. Open your command prompt, then create or open the folder where you want to clone the repo:
 ```
 cd path/to/your/dev/folder/
-mkdir palladris_brokers
-cd palladris_brokers
+mkdir constancy_brokers
+cd constancy_brokers
 ```
 2. Clone this repository, it will download all the necessary files to you run this project in your localhost:
 ```
-git clone https://github.com/Mikael-Caetano/Palladris-Brokers .
+git clone https://github.com/Mikael-Caetano/Constancy-Brokers .
 ```
 
-3. Navigate to palladris_brokers:
+3. Navigate to constancy_brokers:
 ```
-cd palladris_brokers
+cd constancy_brokers
 ```
 
 4. Run the `docker-compose up` command:

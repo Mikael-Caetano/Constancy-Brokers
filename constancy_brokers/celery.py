@@ -4,8 +4,8 @@ import os
 from celery import Celery
 
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "palladris_brokers.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "constancy_brokers.settings")
 
-app = Celery("palladris_brokers")
+app = Celery("constancy_brokers")
 app.config_from_object("django.conf:settings", namespace="CELERY")
 app.autodiscover_tasks()

@@ -1,7 +1,7 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
-from palladris_brokers.apps.trade.viewsets import (
+from constancy_brokers.apps.trade.viewsets import (
     SelectProviderView,
     SelectCurrencyPairView,
     BlotterTradesViewset,
