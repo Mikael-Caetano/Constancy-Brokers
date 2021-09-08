@@ -1,7 +1,7 @@
 # Palladris Brokers
 A simple trading api.
 
-##How to install and run:  
+## How to install and run:  
 Pre-requisites:  
   Docker/Docker Desktop installed and running.  
   
