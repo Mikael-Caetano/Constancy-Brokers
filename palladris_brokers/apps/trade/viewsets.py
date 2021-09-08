@@ -444,16 +444,16 @@ class MarketGraphView(APIView):
                     (
                         (
                             Cast(
-                                Sum("price", filter=Q(provider=provider)),
+                                Sum("price", filter=Q(_filter, provider=provider)),
                                 FloatField(),
                             )
                             * Cast(
-                                Sum("quantity", filter=Q(provider=provider)),
+                                Sum("quantity", filter=Q(_filter, provider=provider)),
                                 FloatField(),
                             )
                         )
                         / Cast(
-                            Sum("quantity", filter=Q(provider=provider)),
+                            Sum("quantity", filter=Q(_filter, provider=provider)),
                             FloatField(),
                         )
                     ),
@@ -461,7 +461,7 @@ class MarketGraphView(APIView):
                 ),
                 feed=Coalesce(
                     Cast(
-                        Sum("price", filter=Q(trader=user, provider=provider)),
+                        Sum("price", filter=Q(_filter, trader=user, provider=provider)),
                         FloatField(),
                     ),
                     0,

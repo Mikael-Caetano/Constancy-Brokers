@@ -1,4 +1,5 @@
 import random
+import decimal
 from django.conf import settings
 from celery import task
 
@@ -15,7 +16,6 @@ def generate_trades():
     pairs = Pair.objects.all()
 
     trades = []
-    random_price_change = random.uniform(-10, +10)
 
     random_traders = random.choices(traders, k=settings.TRADES_CREATED_PER_MINUTE)
     random_providers = random.choices(providers, k=settings.TRADES_CREATED_PER_MINUTE)
@@ -31,7 +31,8 @@ def generate_trades():
         )
 
         if last_trade:
-            price = last_trade.price + random.choice(random_price_change)
+            random_price_change = decimal.Decimal(random.uniform(-10, +10))
+            price = last_trade.price + random_price_change
             if price < 0:
                 price = 0
         else:

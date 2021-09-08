@@ -1,0 +1,960 @@
+{
+	"info": {
+		"_postman_id": "5d0d8e2c-08f5-4170-8f23-d4a6219482a5",
+		"name": "Trade",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Trades",
+			"item": [
+				{
+					"name": "Create trade",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token a6a8bc0a9ad4c2a178b46c07b3fd0be62c919e95",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"provider\": 381,\r\n    \"pair\": 1258,\r\n    \"quantity\": 200,\r\n    \"price\": 300.04\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/trade/trades/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"trade",
+								"trades",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update trade",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token a6a8bc0a9ad4c2a178b46c07b3fd0be62c919e95",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"provider\": 381,\r\n    \"pair\": 1258,\r\n    \"quantity\": 200,\r\n    \"price\": 3130.02\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/trade/trades/11203/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"trade",
+								"trades",
+								"11203",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Providers",
+			"item": [
+				{
+					"name": "List providers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token a6a8bc0a9ad4c2a178b46c07b3fd0be62c919e95",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/trade/providers/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"trade",
+								"providers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve provider",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token a6a8bc0a9ad4c2a178b46c07b3fd0be62c919e95",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/trade/providers/379",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"trade",
+								"providers",
+								"379"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create provider",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token a6a8bc0a9ad4c2a178b46c07b3fd0be62c919e95",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Test\",\r\n    \"acronym\": \"TES\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/trade/providers/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"trade",
+								"providers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update provider",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token a6a8bc0a9ad4c2a178b46c07b3fd0be62c919e95",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Teste editado\",\r\n    \"acronym\": \"TSEE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/trade/providers/379/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"trade",
+								"providers",
+								"379",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete provider",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token a6a8bc0a9ad4c2a178b46c07b3fd0be62c919e95",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/trade/providers/421/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"trade",
+								"providers",
+								"421",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Currencies",
+			"item": [
+				{
+					"name": "List currencies",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token a6a8bc0a9ad4c2a178b46c07b3fd0be62c919e95",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/trade/currencies/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"trade",
+								"currencies",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve currencies",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token a6a8bc0a9ad4c2a178b46c07b3fd0be62c919e95",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/trade/currencies/402",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"trade",
+								"currencies",
+								"402"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create currency",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token a6a8bc0a9ad4c2a178b46c07b3fd0be62c919e95",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Test\",\r\n    \"acronym\": \"TES\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/trade/currencies/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"trade",
+								"currencies",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update currency",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token a6a8bc0a9ad4c2a178b46c07b3fd0be62c919e95",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Teste editado\",\r\n    \"acronym\": \"TSE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/trade/currencies/402/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"trade",
+								"currencies",
+								"402",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete currency",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token a6a8bc0a9ad4c2a178b46c07b3fd0be62c919e95",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/trade/currencies/402/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"trade",
+								"currencies",
+								"402",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pairs",
+			"item": [
+				{
+					"name": "List pairs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token a6a8bc0a9ad4c2a178b46c07b3fd0be62c919e95",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/trade/pairs/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"trade",
+								"pairs",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve pair",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token a6a8bc0a9ad4c2a178b46c07b3fd0be62c919e95",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/trade/pairs/1247",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"trade",
+								"pairs",
+								"1247"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create pair",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token a6a8bc0a9ad4c2a178b46c07b3fd0be62c919e95",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"from_currency\": 442,\r\n    \"to_currency\": 446\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/trade/pairs/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"trade",
+								"pairs",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update pair",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token a6a8bc0a9ad4c2a178b46c07b3fd0be62c919e95",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"from_currency\": 442,\r\n    \"to_currency\": 443\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/trade/pairs/1247/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"trade",
+								"pairs",
+								"1247",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete pair",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token a6a8bc0a9ad4c2a178b46c07b3fd0be62c919e95",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/trade/pairs/1247/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"trade",
+								"pairs",
+								"1247",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Select providers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token a6a8bc0a9ad4c2a178b46c07b3fd0be62c919e95",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/trade/select-providers/?page=1&search=N",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"trade",
+						"select-providers",
+						""
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "search",
+							"value": "N"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Select currency pairs",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token a6a8bc0a9ad4c2a178b46c07b3fd0be62c919e95",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/trade/select-currency-pairs/?page=1&search=a",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"trade",
+						"select-currency-pairs",
+						""
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "search",
+							"value": "a"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Blotter trades",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token a6a8bc0a9ad4c2a178b46c07b3fd0be62c919e95",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/trade/blotter/trades/",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"trade",
+						"blotter",
+						"trades",
+						""
+					],
+					"query": [
+						{
+							"key": "pairs",
+							"value": "1013",
+							"disabled": true
+						},
+						{
+							"key": "pairs",
+							"value": "1011",
+							"disabled": true
+						},
+						{
+							"key": "min_price",
+							"value": "1.3",
+							"disabled": true
+						},
+						{
+							"key": "max_price",
+							"value": "2.1",
+							"disabled": true
+						},
+						{
+							"key": "min_quantity",
+							"value": "100",
+							"disabled": true
+						},
+						{
+							"key": "max_quantity",
+							"value": "200",
+							"disabled": true
+						},
+						{
+							"key": "start",
+							"value": "07/09/2021 23:07",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Blotter trade",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token a6a8bc0a9ad4c2a178b46c07b3fd0be62c919e95",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/trade/blotter/trades/1",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"trade",
+						"blotter",
+						"trades",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Blotter graph",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token a6a8bc0a9ad4c2a178b46c07b3fd0be62c919e95",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/trade/blotter/trades/graph/",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"trade",
+						"blotter",
+						"trades",
+						"graph",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Market Graph",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token a6a8bc0a9ad4c2a178b46c07b3fd0be62c919e95",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/trade/market/?providers=381&providers=380&pair=1258&start=07/09/2021 22:00&end=07/09/2021 23:00",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"trade",
+						"market",
+						""
+					],
+					"query": [
+						{
+							"key": "providers",
+							"value": "381"
+						},
+						{
+							"key": "providers",
+							"value": "380"
+						},
+						{
+							"key": "pair",
+							"value": "1258"
+						},
+						{
+							"key": "start",
+							"value": "07/09/2021 22:00"
+						},
+						{
+							"key": "end",
+							"value": "07/09/2021 23:00"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
