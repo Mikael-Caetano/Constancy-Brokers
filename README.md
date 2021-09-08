@@ -176,8 +176,8 @@ You can set all the example data to your preferences.
 
 ## api/trade/market/
 * GET - Retrieve market graph
-    *query arguments: pair, providers, start, end
-    
+    * query arguments: pair, providers, start, end
+
     * overall - The average selling price among all brokers.
     * vwap - https://www.investopedia.com/terms/v/vwap.asp
     * feed - The selling price for the logged user.
