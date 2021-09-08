@@ -155,23 +155,29 @@ You can set all the example data to your preferences.
 
 * DELETE - Delete currency pair
 
-## api/trade/select-providers/?page=3&search=test
-* GET - List providers for select - arguments: page, search
+## api/trade/select-providers/
+* GET - List providers for select
+    * query arguments: page, search
 
-## api/trade/select-currency-pairs/?page=3&search=test
-* GET - List providers for select - arguments: page, search
+## api/trade/select-currency-pairs/
+* GET - List providers for select
+    * query arguments: page, search
 
-## api/trade/blotter/trades/?pairs=1013&pairs=1011&min_price=1.3&max_price=2.1&min_quantity=100&max_quantity=200&start=07/09/2021 23:07&end=07/09/2021 23:50
-* List user trades - arguments: pairs, min_price, max_price, min_quantity, max_quantity, start, end
+## api/trade/blotter/trades/
+* List user trades
+    * query arguments: pairs, min_price, max_price, min_quantity, max_quantity, start, end
 
 ## api/trade/blotter/trades/(id)
 * GET - Retrieve trade data
 
-## api/trade/blotter/trades/graph/?pairs=1013&pairs=1011&min_price=1.3&max_price=2.1&min_quantity=100&max_quantity=200&start=07/09/2021 23:07&end=07/09/2021 23:50
-* GET - Retrieve user trades graph - arguments: pairs, min_price, max_price, min_quantity, max_quantity, start, end
+## api/trade/blotter/trades/graph/
+* GET - Retrieve user trades graph
+    * query arguments: pairs, min_price, max_price, min_quantity, max_quantity, start, end
 
-## api/trade/market/?providers=381&providers=380&pair=1258&start=07/09/2021 22:00&end=07/09/2021 23:00
-* GET - Retrieve market graph - arguments: pair, providers, start, end
-  * overall - The average selling price among all brokers.
-  * vwap - https://www.investopedia.com/terms/v/vwap.asp
-  * feed - The selling price for the logged user.
+## api/trade/market/
+* GET - Retrieve market graph
+    *query arguments: pair, providers, start, end
+    
+    * overall - The average selling price among all brokers.
+    * vwap - https://www.investopedia.com/terms/v/vwap.asp
+    * feed - The selling price for the logged user.
