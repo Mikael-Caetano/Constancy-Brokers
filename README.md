@@ -1,5 +1,5 @@
 # Constancy Brokers
-A simple trading api.
+A simple trading API made for a company coding test.
 
 ## How to install and run:  
 Pre-requisites:  
